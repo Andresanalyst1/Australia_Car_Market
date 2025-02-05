@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 st.title('Australia Car Market 🚗')
 
-st.text('Please fill out this information to know more about the car you are looking for🙂')
+st.text('Complete this form to learn more about the car you are looking for.🙂')
 
 Brand = st.selectbox('Brand👨🏻‍🔧',an.brands)
 
@@ -30,14 +30,29 @@ df_filtered=an.cars_df[(an.cars_df['Concatenate']==name_concatenate)
                         & (an.cars_df['Year'] >=Year[0])  & (an.cars_df['Year']<=Year[1]) 
                         & (an.cars_df['Kilometers'] >=Kms[0])  & (an.cars_df['Kilometers']<=Kms[1])]
 
-st.dataframe(df_filtered[['Name','Variant','Year','Kilometers','Price','Gearbox','Fuel','Color']])
+st.dataframe(df_filtered[['Name','Series','Year','Kilometers','Price','Type','Gearbox','Fuel','Color']])
 
 mean_price = round(df_filtered['Price'].mean(),0)
-st.markdown(f"The average price of this vehicle is around **${mean_price:,.0f}**")
 
-fig, ax = plt.subplots()
-#plt.figure(figsize=(12,5))
-ax = plt.hist(df_filtered['Price'],alpha=0.5)
+if  pd.isna(mean_price):
+    st.markdown('No cars found.')
+else:
+    st.markdown(f"The average price of this vehicle is around **${mean_price:,.0f}**")
+
+
+fig = plt.figure(figsize=(15, 6))
+plt.subplot(1,2,1)
+plt.hist(df_filtered['Price'],alpha=0.5)
+plt.xlabel('Price ($)')
+plt.ylabel('Count')
+plt.title(str(name_concatenate) +' Histogram Price')
+
+plt.subplot(1,2,2)
+plt.scatter(df_filtered['Kilometers'],df_filtered['Price'],s=12)
+plt.xlabel('Kilometers')
+plt.ylabel('Price ($)')
+plt.title(str(name_concatenate) + ' Kilometers VS Price')
+
 st.pyplot(fig)
 
 
@@ -45,5 +60,5 @@ col1, col2 = st.columns(2)  # Two columns
 col1.write("This is Column 1")
 col2.write("This is Column 2")
 
-st.sidebar.title("Sidebar Title")  # Adds a sidebar
-st.sidebar.text_input("Enter something in the sidebar")
+#st.sidebar.title("Sidebar Title")  # Adds a sidebar
+#st.sidebar.text_input("Enter something in the sidebar")
