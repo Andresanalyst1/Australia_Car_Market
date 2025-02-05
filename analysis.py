@@ -9,7 +9,7 @@ import seaborn as sns
 # ##First approach to the dataframe
 
 # %%
-cars_df = pd.read_csv(r'C:\Users\pipec\OneDrive\Documentos\Python Scripts\Australia Car Market Data\Australia_Car_Market\cars_info.csv')
+cars_df = pd.read_csv('cars_info.csv')
 cars_df.head()
 
 
