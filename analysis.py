@@ -2,8 +2,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from mpl_toolkits.basemap import Basemap
-import geopandas as gpd
 import seaborn as sns
 
 
