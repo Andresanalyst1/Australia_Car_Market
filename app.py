@@ -114,8 +114,7 @@ st.markdown(
     """
     ---
     Made with passion❤️‍🔥  
-    For more information visit the [Australia Car Market Database](https://www.kaggle.com/datasets/lainguyn123/australia-car-market-data).
-    Created by Andres Cardenas, visit my [linkedin profile](https://www.linkedin.com/in/andr%C3%A9s-c%C3%A1rdenas-4b992a191/) . 
+    For more information, visit the [Australia Car Market Database](https://www.kaggle.com/datasets/lainguyn123/australia-car-market-data). 
     """
 )
-
+st.markdown('Created by **Andres Cardenas**, visit my [linkedin profile](https://www.linkedin.com/in/andr%C3%A9s-c%C3%A1rdenas-4b992a191/) .')
