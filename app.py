@@ -21,7 +21,7 @@ Variant_array = 'Select all variants'
 Variant_array = np.append(Variant_array,np.sort(an.cars_df[an.cars_df['Model'] == Model]['Variant'].unique()))
 Variant= st.selectbox('Variant 🔧',Variant_array) #Variant input
 
-Gearbox = st.radio('Select Gearbox: ',['Automatic','Manual',"I don't mind"]) #Gearbox input
+Gearbox = st.radio('Select Gearbox: ',['Automatic','Manual',"I don't mind"],index=2) #Gearbox input
 
 Year= st.slider('Year between: ⏱️',min_value=1995,max_value=2023,value=(2000,2020)) #Year input
 Kms= st.slider('Kilometers Between: 🛞',min_value=0,max_value=500000,value=(0,150000),step=10000) #kilometers input
