@@ -23,8 +23,8 @@ Variant= st.selectbox('Variant 🔧',Variant_array) #Variant input
 
 Gearbox = st.radio('Select Gearbox: ',['Automatic','Manual',"I don't mind"],index=2) #Gearbox input
 
-Year= st.slider('Year between: ⏱️',min_value=1995,max_value=2023,value=(2000,2020)) #Year input
-Kms= st.slider('Kilometers Between: 🛞',min_value=0,max_value=500000,value=(0,150000),step=10000) #kilometers input
+Year= st.slider('Year range: ⏱️',min_value=1995,max_value=2023,value=(2000,2020)) #Year input
+Kms= st.slider('Kilometers range: 🛞',min_value=0,max_value=500000,value=(0,150000),step=10000) #kilometers input
 
 st.markdown(
     """
@@ -114,6 +114,7 @@ st.markdown(
     """
     ---
     Made with passion❤️‍🔥  
+    For more information visit the [Australia Car Market Database](https://www.kaggle.com/datasets/lainguyn123/australia-car-market-data).
     Created by Andres Cardenas, visit my [linkedin profile](https://www.linkedin.com/in/andr%C3%A9s-c%C3%A1rdenas-4b992a191/) . 
     """
 )
