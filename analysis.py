@@ -1,19 +1,19 @@
-# %%
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 
 
-# %% [markdown]
+
 # ##First approach to the dataframe
 
-# %%
+
 cars_df = pd.read_csv('cars_info.csv')
 cars_df.head()
 
 
-# %%
+
 print(cars_df.describe())
 print(cars_df.dtypes)
 
@@ -21,10 +21,10 @@ print(len(cars_df))
 
 
 
-# %% [markdown]
+
 # ##Finding the top 5 of the most sold car Brands
 
-# %%
+
 #Top 5 of the most sold car Brands.
 
 cars_dups = cars_df['Brand'].value_counts()
@@ -65,10 +65,10 @@ plt.show()
 
 
 
-# %% [markdown]
+
 # ##Comparing variation of each specific vehicle.
 
-# %%
+
 
 ##defining a function where we can analyze an specific vehicle.
 def vehicle_variation(name):
@@ -82,11 +82,11 @@ def vehicle_variation(name):
 vehicle_variation('2010 Mercedes-Benz E250 CDI Avantgarde 207')
 
 
-# %% [markdown]
+
 # Now le'ts check which continent is the king in Australia.
 # I wan to agroup the brands per continents and then plot a warm graph.
 
-# %%
+
 ##Agrouping Brands per continent.
 
 # List of brands
@@ -122,10 +122,10 @@ merge_df_count
 #print(max(merge_df_count.values))
 
 
-# %% [markdown]
+
 # #Now let's check how the kms affect the price.
 
-# %%
+
 #Plotting kms vs price
 continents_unique = brands_df['Continent'].unique()
 kms_price = pd.merge(cars_df,brands_df,how='inner')
@@ -144,10 +144,10 @@ plt.show()
 
 #print(brands_df)
 
-# %%
+
 print(cars_df[cars_df['Kilometers']  > 900000])
 
-# %%
+
 plt.figure(figsize=(13,5))
 
 color = ['blue','green','orange','red']
@@ -169,19 +169,19 @@ plt.show()
 
 
 
-# %% [markdown]
+
 # The graph above shows the variation in terms of price and mileage according to each brands' continent.
 # Asian brands experiment wide high kilometers and their prices in most of the cases not exceeding $200.000. On the other hand the European brands show the opposite trend with a very low kilometers and prices higher than $500.000. The other two continents in mention show a similar behaviour.
 # 
 # 
 
-# %% [markdown]
+
 # Now, lets have a look on the next hipotesis:
 # Usually the cars with a mecanic gearbox is cheaper than cars with automatic gearbox:
 # Ho: The gearbox type has no effect on car price. (The average price of manual and automatic cars is the same.)
 # H1:  The gearbox type does affect car price. (The average prices are different.)
 
-# %%
+
 from scipy.stats import iqr
 #Cleaning and Separating the data
 
@@ -256,7 +256,6 @@ else:
 #In conclusion, There is strong evidence to confirm that the gearbox type affect the price of every car.
 
 
-# %%
 #Now let's check what is the top 3 colors vehicle in Australia
 colors_standard=cars_df['Color'].str.capitalize() #Capitalizing all values to don't lose info ('Blue','blue','BLUE')
 colors_df = colors_standard.value_counts().head(10)
