@@ -89,6 +89,7 @@ plt.scatter(df_filtered['Kilometers'],df_filtered['Price'],s=22)
 try:
     slope, intercept, r_value, p_value, std_err = linregress(df_filtered['Kilometers'], df_filtered['Price'])  # 1 = linear regression (degree 1)
     regression_line = slope * df_filtered['Kilometers'] + intercept
+    r2 = float(r_value**2)
     plt.plot(df_filtered['Kilometers'], regression_line, color="red", label=f"Regression Line (y={slope:.2f}x+{intercept:.2f})")  # Linear regression
 except:
     st.text('Please try again.')
@@ -100,16 +101,19 @@ plt.ylabel('Price ($AUD)')
 plt.title('2.) '+ str(name_concatenate) + ' Kilometers VS Price')
 plt.legend()
 
+
 st.pyplot(fig2)
+
 try:
     st.markdown(f"🚗 This second graph shows a trend of the **{str(name_concatenate)}** price.<br> \
     📶 Each dot represents a specific car. <br> \
-    📉 The line shows the general trend as a linear regression with **R = {r_value:,.2f}**.",unsafe_allow_html=True)
+    📉 The line shows the general trend as a linear regression with **R² = {r2:,.2f}**.",unsafe_allow_html=True)
 except:
     st.text('')
 
 
 # Footnote
+
 st.markdown(
     """
     ---
