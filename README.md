@@ -29,8 +29,8 @@ This interactive Streamlit app helps users analyze the Australian car market. Wh
 3. **Explore the Tableau dashboard** for additional insights.
 
 ## 📩 Contact
-🔗 **GitHub**: [Your GitHub Profile](https://github.com/Andresanalyst1)  
-🔗 **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/andr%C3%A9s-c%C3%A1rdenas-4b992a191/)  
+🔗 **GitHub**: [GitHub Profile](https://github.com/Andresanalyst1)  
+🔗 **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/andr%C3%A9s-c%C3%A1rdenas-4b992a191/)  
 
 🚀 *Feel free to explore, provide feedback, or reach out for collaborations!*
 
