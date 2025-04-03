@@ -8,8 +8,10 @@ import seaborn as sns
 import streamlit.components.v1 as components
 
 
-def show_modal():
-    st.title("**🚗 Car Australian Market**")
+
+st.title("**🚗 Car Australian Market**")
+
+with st.expander('**See Explanation**'):
     st.markdown("""
     ### 📌 Overview
     This interactive app helps you analyze the Australian car market. You can filter and explore car prices, specifications, and more.
@@ -23,27 +25,16 @@ def show_modal():
           - A comprehensive **descriptive analysis** of main car features.
           - Interactive charts for deeper exploration of the Australian car market.
 
-        ### 🛠 Tech Stack
-        - **Python** (Pandas, NumPy, Matplotlib, Seaborn)
-        - **Streamlit** (for interactive web app)
-        - **Tableau** (for advanced data visualization)
-        - **Jupyter Notebook** (for data cleaning & analysis)
+    ### 🛠 Tech Stack
+    - **Python** (Pandas, NumPy, Matplotlib, Seaborn)
+    - **Streamlit** (for interactive web app)
+    - **Tableau** (for advanced data visualization)
+    - **Jupyter Notebook** (for data cleaning & analysis)
 
         📩 *Explore the app and enjoy!*
 
     """)
 
-# Display modal-like pop-up on first load
-if "modal_shown" not in st.session_state:
-    st.session_state.modal_shown = False
-
-if not st.session_state.modal_shown:
-    show_modal()
-
-    # Button to close modal (appears only when modal is shown)
-    if st.button("Close and Continue"):
-        st.session_state.modal_shown = True  
-        
 
 
 
